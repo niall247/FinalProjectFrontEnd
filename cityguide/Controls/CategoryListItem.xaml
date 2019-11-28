@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <Grid
+          xmlns="http://xamarin.com/schemas/2014/forms" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+      x:Class="cityguide.Controls.CategoryListItem"
+        x:Name="this"
+          Padding="5,5,5,5"
+          HeightRequest="200"
+          VerticalOptions="Start">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="AUTO"/>
+                        </Grid.RowDefinitions>
+
+                  <Image x:Name="image" Aspect="AspectFill" Source="{Binding ImageURL, Source={x:Reference this}}" Grid.RowSpan="2">
+
+        <!--<Image.Source>
+            <UriImageSource Uri="{Binding ImageURL, Source={x:Reference this}}" />
+                    </Image.Source>-->
+                    </Image>
+                        <Grid Margin="5" RowSpacing="5" ColumnSpacing="5" Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="25"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="AUTO"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding Text, Source={x:Reference this}}" Style="{StaticResource TileCategoryMain}"  Grid.Row="0" Grid.Column="1" LineBreakMode="NoWrap"/>
+
+                            <Label Text="{Binding SubText, Source={x:Reference this}}" Margin="20,0,0,0" Style="{StaticResource TileCategory}" Grid.Row="1" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" VerticalTextAlignment="Center">
+            </Label>
+   
+            
+                             <StackLayout Orientation="Horizontal"  VerticalOptions="Center" Grid.Column="2" Grid.Row="1" Spacing="5">
+                                <Label Text=""  />
+                                <Label Text="" />
+                            </StackLayout>
+        </Grid>
+    </Grid>

@@ -1,0 +1,42 @@
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:cityguide.View;assembly=cityguide"
+            x:Class="cityguide.View.TabPage">
+    <NavigationPage Title="About" Icon="about.jpg">
+         <x:Arguments>
+               <local:AboutPageView />
+        </x:Arguments>
+        </NavigationPage>
+     <NavigationPage Title="Explore" Icon="favourite.jpg">
+        <x:Arguments>
+            <local:CategoriesView/>
+        </x:Arguments>
+    </NavigationPage>
+         <NavigationPage Title="Help" Icon="help.jpg">
+        <x:Arguments>
+            <local:AboutPageView />
+        </x:Arguments>
+    </NavigationPage>
+   
+
+    
+    <!--
+           <NavigationPage Title="Home" Icon="home.png">
+        <x:Arguments>
+            <local:AboutPageView />
+        </x:Arguments>
+    </NavigationPage>
+     <NavigationPage Title="Explore" Icon="saint_paul.png">
+        <x:Arguments>
+            <local:CategoriesView/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Favourites" Icon="saint_paul.png">
+        <x:Arguments>
+            <local:FavouritesView/>
+        </x:Arguments>
+    </NavigationPage>
+    
+    -->
+
+</TabbedPage>

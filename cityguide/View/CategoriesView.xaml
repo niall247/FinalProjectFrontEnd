@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="cityguide.View.CategoriesView"
+             Title="Categories"
+              NavigationPage.HasNavigationBar="false"
+             xmlns:controls="clr-namespace:cityguide.Controls"
+             
+             >
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid RowSpacing="0" ColumnSpacing="0" Padding="0" Margin="0,0,0,0" > 
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition> 
+                      <RowDefinition Height="*"></RowDefinition> 
+                  </Grid.RowDefinitions>  
+              <Grid.ColumnDefinitions >
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+         <Button Text="Events" Command="{Binding GetCityEventsCommand}" BorderRadius="0"  BackgroundColor="#81bb05" Style="{StaticResource CategoryText}" Image="events.png" ContentLayout="Top"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>       
+         <Button Text="Restaurants" Command="{Binding GetRestaurantsCommand}"  BorderRadius="0" BackgroundColor="#f65d35" Style="{StaticResource CategoryText}" Image="food.png" ContentLayout="Top"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1"/>       
+         <Button Text="Sites" Command="{Binding GetCitySitesCommand}" BorderRadius="0" BackgroundColor="#04a5f0" Style="{StaticResource CategoryText}" Image="sights.png" ContentLayout="Top"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.Column="0"/>       
+         <Button Text="Shopping" Command="{Binding GetCityShopsCommand}"   BorderRadius="0" BackgroundColor="#ffba07" Style="{StaticResource CategoryText}" Image="shopping.png" ContentLayout="Top"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.Column="1"/>  
+         <Button Text="Transport" Command="{Binding GetCityTransportOptionsCommand}" BorderRadius="0" BackgroundColor="#81bb05" Style="{StaticResource CategoryText}" Image="transport.png" ContentLayout="Top"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="0"/>  
+         <Button Text="Museums" Command="{Binding GetCityMuseumsCommand}"  BorderRadius="0" BackgroundColor="#f65d35" Style="{StaticResource CategoryText}" Image="kids.png" ContentLayout="Top"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="1"/>  
+            </Grid>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

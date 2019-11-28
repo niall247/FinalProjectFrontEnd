@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="cityguide.View.CityEventDetailView"
+            xmlns:controls="clr-namespace:cityguide.Controls"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             NavigationPage.HasNavigationBar="true"
+             >
+    
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{Binding CityEventName}" />
+     </ContentPage.ToolbarItems>
+    
+ 
+    <ContentPage.Content>
+        <ScrollView Margin="0,0,0,0">
+        <Grid>
+        <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="200"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>    
+            <ColumnDefinition Width="0.7*"/>  
+        </Grid.ColumnDefinitions>
+        <StackLayout Grid.Row="0" Grid.ColumnSpan="2">
+            <Image Source="{Binding CityEventImageSource}" Aspect="AspectFill" />
+            </StackLayout>
+       <StackLayout Margin="10,5,10,5" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+       <Label  Text="{Binding CityEventName}" Style="{StaticResource HeaderDetail}"/> 
+        <Label  Text="{Binding CityEventDescription}" Style="{StaticResource DetailTextItem}" LineBreakMode="WordWrap"  />
+          <Label  Text="Practical Information" Style="{StaticResource DetailTextHeader}" LineBreakMode="WordWrap" />    
+        <controls:informationLabel ItemText="Neighbourhood" Text="{Binding NeighbourhoodName}"></controls:informationLabel>
+        <controls:informationLabel ItemText="Price" Text="{Binding CityEventCost}"></controls:informationLabel>
+       <controls:informationLabel ItemText="Dates" Text="{Binding EventTimings}"></controls:informationLabel>
+        <controls:hyperlinklabel ItemText="Website" Text="{Binding CityEventWebSite}"></controls:hyperlinklabel>
+      <controls:informationLabel ItemText="Telephone" Text="{Binding CityEventTelephone}"></controls:informationLabel> 
+       <controls:informationLabel ItemText="Address" Text="{Binding CityEventAddress}"></controls:informationLabel> 
+    <Button x:Name="AddToFavouritesButton" Padding="10,10,10,10" Text="Add to Favourites" Command="{Binding AddFavouritesCommand}" TextColor="White" BackgroundColor="{Binding CityEventFavourite, Converter={StaticResource AllButtonSetConverter}}"  HeightRequest="25"  HorizontalOptions="End" />
+           
+                </StackLayout>
+                <Frame CornerRadius="10"  
+       OutlineColor="#ff9933" 
+       Padding="4" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,10,10,10">
+                  
+            <maps:Map WidthRequest="250"
+             HeightRequest="250" VerticalOptions="Fill" HorizontalOptions="Fill"
+            x:Name="MyMap"
+            IsShowingUser="true"
+            MapType="Street"
+            />
+             
+                    </Frame>
+                
+               
+                
+                <StackLayout Margin="10,5,10,5" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+  
+          <Label  Text="Inclusivity Information" Style="{StaticResource DetailTextHeader}" LineBreakMode="WordWrap" />    
+         <controls:informationLabel ItemText="Child Friendly" Text="{Binding ChildFriendly, Converter={StaticResource AllBooleansConverter}}"></controls:informationLabel>
+          <controls:informationLabel ItemText="Child Detail" Text="{Binding ChildDetail}"></controls:informationLabel>
+                    <controls:informationLabel ItemText="Disability Access" Text="{Binding DisabilityAccess, Converter={StaticResource AllBooleansConverter}}"></controls:informationLabel>      
+                    <controls:informationLabel ItemText="Disability Detail" Text="{Binding DisabilityDetail}"></controls:informationLabel>      
+                </StackLayout>
+                
+                
+                <StackLayout Orientation="Vertical" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" VerticalOptions="Start" HorizontalOptions="Start">
+                <StackLayout Orientation="Horizontal" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" VerticalOptions="Start" HorizontalOptions="Start">
+
+                    <Label  Text="Reviews"  Style="{StaticResource DetailTextHeader}" LineBreakMode="WordWrap" />    
+
+                        <Button x:Name="AddReviewsButton" TextColor="White" Padding="10,10,10,10" Text="Add Review" Command="{Binding addReviewCommand}" BackgroundColor="{StaticResource AzureBlue}" HeightRequest="20"  HorizontalOptions="End" />
+            <Button x:Name="GetReviewsButton" Padding="10,10,10,10" Text="Get Reviews" Command="{Binding GetReviewsCommand}" TextColor="White" BackgroundColor="{StaticResource AzureBlue}" HeightRequest="20"  HorizontalOptions="End" />
+                    </StackLayout>
+                <ListView x:Name="myListView" IsPullToRefreshEnabled="false" ItemsSource="{Binding allReviewsForItem}"  RowHeight="100" BackgroundColor="Transparent" >
+             <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout>
+                                 <Label Text="{Binding reviewRating}" Margin="10,10,0,0"></Label>
+                                <Label Text="{Binding reviewText}" Margin="10,10,0,0" FontSize="Small" ></Label>
+                                        </StackLayout>
+                           </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                 </StackLayout>
+
+        </Grid>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

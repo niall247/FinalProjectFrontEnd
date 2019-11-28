@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="cityguide.App"
+             xmlns:converters="clr-namespace:cityguide.Converters"
+             
+             >
+    <Application.Resources>
+      <ResourceDictionary>
+           
+            #666699
+            <Color x:Key="AzureBlue">#1D9CC0</Color>
+            <Color x:Key="StrongBlue">#0066cc</Color>
+            <Color x:Key="HotOrange">#ff9933</Color>
+               <Color x:Key="MenuGray">#fcfcfc</Color>
+               <Style x:Key="TileCategory" TargetType="{x:Type Label}">
+                <Setter Property="FontSize" Value="12"></Setter>
+                 <Setter Property="FontAttributes" Value="Bold"></Setter>
+                <Setter Property="TextColor" Value="White"></Setter>
+                    <Setter Property="BackgroundColor" Value="{StaticResource HotOrange}"> </Setter>
+               </Style>
+            
+                <Style x:Key="TileCategoryMain" TargetType="{x:Type Label}">
+                <Setter Property="FontSize" Value="20"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+                <Setter Property="TextColor" Value="White"></Setter>
+                </Style>
+            
+             <Style x:Key="HeaderDetail" TargetType="{x:Type Label}">
+                <Setter Property="FontSize" Value="25"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+                <Setter Property="Margin" Value="10,10,0,10"></Setter>
+                <Setter Property="TextColor" Value="#FFA984"></Setter>
+                </Style>
+            
+            <Style x:Key="DetailTextItem" TargetType="{x:Type Label}">
+                <Setter Property="FontSize" Value="12"></Setter>
+                <Setter Property="Margin" Value="10,0,0,10"></Setter>
+                <Setter Property="TextColor" Value="black"></Setter>
+                <Setter Property="HorizontalOptions" Value="Start"></Setter>
+                </Style>
+            
+             <Style x:Key="HyperlinkTextItem" TargetType="{x:Type Span}">
+                <Setter Property="FontSize" Value="12"></Setter>
+              
+                <Setter Property="TextColor" Value="Orange"></Setter>
+                </Style>
+            
+             <Style x:Key="DetailTextHeader" TargetType="{x:Type Label}">
+                <Setter Property="FontSize" Value="14"></Setter>
+                <Setter Property="Margin" Value="10,0,0,10"></Setter>
+                <Setter Property="TextColor" Value="black"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+                <Setter Property="HorizontalOptions" Value="Start"></Setter>
+                </Style>
+            
+            <Style x:Key="DetailTextItemLegend" TargetType="{x:Type Label}">
+                <Setter Property="FontSize" Value="12"></Setter>
+                <Setter Property="Margin" Value="10,0,0,10"></Setter>
+                <Setter Property="TextColor" Value="{StaticResource AzureBlue}"></Setter>
+                <Setter Property="HorizontalOptions" Value="Start"></Setter>
+                </Style>
+            
+            <Style x:Key="MainDetail" TargetType="{x:Type Label}">
+                <Setter Property="FontSize" Value="12"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+           
+                <Setter Property="TextColor" Value="#fcfcfc"></Setter>
+                </Style>
+                
+                 <Style x:Key="TileItemDetailMain" TargetType="{x:Type Label}">
+                  <Setter Property="FontSize" Value="28"></Setter>
+                 <Setter Property="FontAttributes" Value="Bold"></Setter>
+                <Setter Property="TextColor" Value="White"></Setter>
+                    <Setter Property="BackgroundColor" Value="{StaticResource HotOrange}"> </Setter>
+                </Style> 
+                
+                <Style x:Key="CategoryText" TargetType="{x:Type Button}">
+                <Setter Property="FontSize" Value="20"></Setter>
+                <Setter Property="TextColor" Value="white"></Setter>
+                <Setter Property="HorizontalOptions" Value="Center"></Setter>
+                <Setter Property="VerticalOptions" Value="Center"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+                </Style>
+            
+             <Style x:Key="filterbuttonstyle" TargetType="{x:Type Button}">
+                <Setter Property="FontSize" Value="10"></Setter>
+                <Setter Property="TextColor" Value="{StaticResource StrongBlue}"></Setter>
+                <Setter Property="HorizontalOptions" Value="Center"></Setter>
+                <Setter Property="VerticalOptions" Value="Center"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+                </Style>
+            
+            <Style x:Key="filterbuttonstyleSelected" TargetType="{x:Type Button}">
+                <Setter Property="FontSize" Value="10"></Setter>
+                <Setter Property="TextColor" Value="{StaticResource HotOrange}"></Setter>
+                <Setter Property="HorizontalOptions" Value="Center"></Setter>
+                <Setter Property="VerticalOptions" Value="Center"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+                </Style>
+                </ResourceDictionary>
+       <converters:ButtonSetConverter x:Key="AllButtonSetConverter" />
+        <converters:BooleanConverter x:Key="AllBooleansConverter" />
+           <converters:CuisineConverter x:Key="AllCuisinesConverter" />
+         <converters:BudgetConverter x:Key="AllBudgetsConverter" />
+        <converters:ShopCategoriesConverter x:Key="AllShopCategoriesConverter" />
+    </Application.Resources>
+</Application>

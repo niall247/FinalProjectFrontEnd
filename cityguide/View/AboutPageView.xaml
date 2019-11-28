@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             x:Class="cityguide.View.AboutPageView"
+             Title="About"
+             NavigationPage.HasNavigationBar="false" 
+              >
+    <ContentPage>
+         <ScrollView Margin="0,0,0,0">
+        <Grid BackgroundColor="#1D9CC0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+              
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackLayout  BackgroundColor="#1D9CC0" Grid.Row="0">
+                <StackLayout Padding="0,0">
+                    <Image Source="https://storage.googleapis.com/madridtravel/about/madrid_travel_city_landscape_spain.jpg"
+             WidthRequest="600"
+             HeightRequest="250" Aspect="AspectFill" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout Padding="10,10">
+                    <Label TextColor="White" Text="Welcome To Madrid" HorizontalTextAlignment="Start" LineBreakMode="WordWrap"  FontSize="22" HorizontalOptions="Start" />
+                    <Label TextColor="White" HorizontalTextAlignment="Start" LineBreakMode="WordWrap"  FontSize="12" HorizontalOptions="Center">
+                        <Label.Text>Madrid is the capital of Spain. It is a modern metropolitan city and an economical and industrial center of Spain, and, with its population of nearly 3,5 million people, is also the biggest city in Spain.
+It is located in the centre of the Iberian Peninsula, and is surrounded by mountains and natural parks.
+
+Madrid has a lot of interesting attractions that offer both culture and amusement.The city is full of great monuments, like the royal palace, the Plaza Mayor or the many statuettes, and for people interested in art"</Label.Text>
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+            </ScrollView>
+    </ContentPage>
+</CarouselPage>

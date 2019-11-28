@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="cityguide.View.AddReviewView"
+             Title="Add Review">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="StartAndExpand" Padding="10">
+        <Label x:Name="favLabel" TextColor="{StaticResource HotOrange}" Text="Enter your Review Below"></Label>
+           <Entry x:Name="ReviewTitle" Placeholder="Review Title" BackgroundColor="{StaticResource AzureBlue}" TextColor="White" Text="{Binding ReviewRatingSelection,Mode=TwoWay}" MinimumHeightRequest="20" MinimumWidthRequest="300"></Entry>  
+           <Editor x:Name="ReviewContents"  Placeholder="Review Content" BackgroundColor="{StaticResource AzureBlue}"  TextColor="White" Text="{Binding ReviewContents,Mode=TwoWay}" WidthRequest="250" HeightRequest="150" ></Editor>     
+        <Button x:Name="AddReview" BackgroundColor="{StaticResource HotOrange}" TextColor="White" Text="Add Your Review" Command="{Binding postReviewCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="cityguide.View.CityShopListView"
+              xmlns:controls="clr-namespace:cityguide.Controls"
+             NavigationPage.HasNavigationBar="true"
+             >
+    <ContentPage.Content>
+           <StackLayout BackgroundColor="Black" Orientation="Vertical">
+            
+        <ScrollView Orientation="Horizontal" Margin="10,10,0,0" >
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                         <Button x:Name="DisabilityButton" Padding="10,10,10,10" Text="Disability Friendly" Command="{Binding DisabledFilterCommand}" TextColor="White" BackgroundColor="{Binding isDIsabled, Converter={StaticResource AllButtonSetConverter}}"  HeightRequest="20"  HorizontalOptions="End" />
+                          <Button x:Name="ChildFriendlyButton" Padding="10,10,10,10" Text="Child Friendly" Command="{Binding ChildFilterCommand}" TextColor="White" BackgroundColor="{Binding isChildFriendly, Converter={StaticResource AllButtonSetConverter}}"  HeightRequest="20"  HorizontalOptions="End" />
+                   <Button x:Name="FavouritesButton" Padding="10,10,10,10" Text="Favourites" Command="{Binding FavouriteFilterCommand}" TextColor="White" BackgroundColor="{Binding isFavourite, Converter={StaticResource AllButtonSetConverter}}"  HeightRequest="20"  HorizontalOptions="End" />
+     
+                </StackLayout>
+                </ScrollView>
+            <ListView x:Name="myListView" IsPullToRefreshEnabled="false" ItemsSource="{Binding allCityShoppings}" SelectedItem="{Binding selectedCityShopping, Mode=TwoWay}"   RowHeight="200" BackgroundColor="Transparent" >
+             <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                            <!--<controls:CategoryControl Text="{Binding CityEventName}" Image="none.jpg" GetCategoryCommand="{Binding getCategoryCommand}"></controls:CategoryControl>-->
+                           <controls:CategoryListItem ImageURL="{Binding CityShopImageSource}" Text="{Binding CityShopName}" SubText="{Binding CityShopSubtext}" Command="{Binding getSelectedCityShoppingCommand}"></controls:CategoryListItem> 
+                        </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

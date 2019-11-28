@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+      x:Class="cityguide.Controls.informationLabel"
+        x:Name="this">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="0.5*" />
+           <ColumnDefinition Width="0.5*" />
+        </Grid.ColumnDefinitions>
+    <Label Text="{Binding ItemText, Source={x:Reference this}}" Style="{StaticResource DetailTextItemLegend}" Grid.Column="0" />
+    <Label Text="{Binding Text, Source={x:Reference this}}" Style="{StaticResource DetailTextItem}" Grid.Column="1" />
+             
+    </Grid>

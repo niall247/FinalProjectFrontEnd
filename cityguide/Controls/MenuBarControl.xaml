@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Grid
+    
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+      x:Class="cityguide.Controls.MenuBarControl"
+        x:Name="this"
+       
+    >  
+    <Frame CornerRadius="5" 
+           HeightRequest="20"
+           
+           HorizontalOptions="Center"
+           Padding="2"
+           IsClippedToBounds="True">
+    <Button Text="{Binding Text, Source={x:Reference this}}"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+               BackgroundColor="{Binding CategoryBackgroundColor, Source={x:Reference this}}"
+               TextColor="{Binding TextColor, Source={x:Reference this}}"
+               FontSize="Small" FontFamily="Arial"
+                Command="{Binding Command, Source={x:Reference this}}" 
+               CommandParameter="{Binding CommandParameter, Source={x:Reference this}}"
+               
+                     
+               />
+         </Frame>
+  </Grid>

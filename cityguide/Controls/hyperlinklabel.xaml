@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+      x:Class="cityguide.Controls.hyperlinklabel"
+        x:Name="this">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="0.5*" />
+           <ColumnDefinition Width="0.5*" />
+        </Grid.ColumnDefinitions>
+    <Label Text="{Binding ItemText, Source={x:Reference this}}" Style="{StaticResource DetailTextItemLegend}" Grid.Column="0" />
+   
+    <Label Grid.Column="1" Margin="10,0,0,10">
+    <Label.FormattedText>
+        <FormattedString>
+            <Span Text="{Binding Text, Source={x:Reference this}}"
+                  Style="{StaticResource HyperlinkTextItem}" >
+                <Span.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ClickCommand, Source={x:Reference this}}"
+                                          CommandParameter="{Binding Text, Source={x:Reference this}}" />
+                </Span.GestureRecognizers>
+            </Span>
+        </FormattedString>
+    </Label.FormattedText>
+</Label>
+    <!--
+    <Label Text="{Binding Text, Source={x:Reference this}}" Style="{StaticResource DetailTextItem}" Grid.Column="1" />
+           -->  
+    </Grid>

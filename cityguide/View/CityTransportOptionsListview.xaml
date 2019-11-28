@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="cityguide.View.CityTransportOptionsListview"
+                 xmlns:controls="clr-namespace:cityguide.Controls"
+             >
+    <ContentPage.Content>
+            <StackLayout BackgroundColor="Black" Orientation="Vertical">
+
+        <ListView x:Name="myListView" IsPullToRefreshEnabled="false" ItemsSource="{Binding allCityTransports}" SelectedItem="{Binding selectedCityTransport, Mode=TwoWay}"   RowHeight="200" BackgroundColor="Transparent" >
+             <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                            <!--<controls:CategoryControl Text="{Binding CityEventName}" Image="none.jpg" GetCategoryCommand="{Binding getCategoryCommand}"></controls:CategoryControl>-->
+                           <controls:CategoryListItem ImageURL="{Binding CityTransportItemURL}" Text="{Binding CityTransportTitle}" SubText="{Binding CityTransportSubTitle}" Command="{Binding getSelectedCityTransportOptionCommand}"></controls:CategoryListItem> 
+                        </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

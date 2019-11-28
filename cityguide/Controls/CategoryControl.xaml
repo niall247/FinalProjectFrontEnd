@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <Grid
+      xmlns="http://xamarin.com/schemas/2014/forms" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+      x:Class="cityguide.Controls.CategoryControl"
+        x:Name="this"
+          Padding="10,40,10,10"
+          HeightRequest="100"
+          VerticalOptions="Start"
+          BackgroundColor="{Binding CategoryBackgroundColor, Source={x:Reference this}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="image"
+               Source="{Binding Image, Source={x:Reference this}}"
+               HeightRequest="50"
+               HorizontalOptions="Center"/>
+        <Label x:Name="title"
+               Text="{Binding Text, Source={x:Reference this}}"
+               Grid.Row="1" 
+               Style="{StaticResource CategoryText}">
+      <Label.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding GetCategoryCommand}" />
+    </Label.GestureRecognizers>
+  </Label>
+    </Grid>
